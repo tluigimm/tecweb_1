@@ -39,18 +39,30 @@ public class addData extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
+
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
 		String curso = request.getParameter("curso");
 		
 		PrintWriter out = response.getWriter();
 		
+		//ao invés de PrintWriter, deve-se redirecionar o usuário apra outro HTML
+		//Para passar para outro HMTL, é necessário passar pelo doPost (servelet, isto é, a comunicação entre o HTML e o server) para pegar os dados
+		//Printar as variáveis na nova pa´g
+		// pesquisar em w3 java servelet connection html
+		// codejava.net/java-ee/servlet/handling-html-form-data-with-java-servlet
+		// como redirecionar para o novo HTML?
+		
         out.println("<html>");
-        out.println("nome: " + nome + "<br/>");      
+        out.println("<h1>Envio Concluído!</h1>");
+        out.println("<div>");
+        out.println("<p><strong>nome:</strong></p>");
+        out.println("<p>" + nome + "</p>");
+        out.println("</div>");
         out.println("email: " + email + "<br/>");    
         out.println("curso: " + curso + "<br/>");    
         out.println("</html>");
+        out.flush()
     }
 
 }

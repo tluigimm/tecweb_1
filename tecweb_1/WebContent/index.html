@@ -7,10 +7,29 @@
 <body>
 	<h1> Insira os seus dados: </h1>
 	<form action="addData" method="post">
-		Nome: <input type="text" name="nome"/></br>
-		Email: <input type="text" name="email"/></br>
-		Curso: <input type="text" name="curso"/></br>
-		<input type="submit" name="Gravar">
+		<div>
+			<p>Nome</p>
+		 	<input type="text" name="nome" placeholder="Digite seu nome" required/>
+		</div>
+		<div>
+			<p>Email</p>
+		 	<input type="email" name="email" placeholder="Digite seu email" required/>
+		</div>
+		<div>
+			<p>Curso</p>
+		 	<select name="curso" required>
+		 		<option value="" selected>Selecione o seu curso</option>
+				<option value="adm">Administração</option>
+		 		<option value="comp">Engenharia de Computação</option>
+		 		<option value="mecat">Engenharia Mecatrônica</option>
+		 		<option value="mec">Engenharia Mecânica</option>
+		 		<option value="econo">Economia</option>
+		 	</select>
+		</div>
+		<div>
+			<p>obs.:para enviar, verifique se todos os dados estão corretamente preenchidos</p>
+			<input type="submit" name="Enviar"/>
+		</div>		
 	</form>
 
 </body>
