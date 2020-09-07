@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
+/*
  * Servlet implementation class addData
  */
+
 @WebServlet("/addData")
 public class addData extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -46,23 +47,22 @@ public class addData extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		//ao invés de PrintWriter, deve-se redirecionar o usuário apra outro HTML
-		//Para passar para outro HMTL, é necessário passar pelo doPost (servelet, isto é, a comunicação entre o HTML e o server) para pegar os dados
-		//Printar as variáveis na nova pa´g
-		// pesquisar em w3 java servelet connection html
-		// codejava.net/java-ee/servlet/handling-html-form-data-with-java-servlet
-		// como redirecionar para o novo HTML?
-		
         out.println("<html>");
         out.println("<h1>Envio Concluído!</h1>");
         out.println("<div>");
-        out.println("<p><strong>nome:</strong></p>");
+        out.println("<p><strong>Nome:</strong></p>");
         out.println("<p>" + nome + "</p>");
         out.println("</div>");
-        out.println("email: " + email + "<br/>");    
-        out.println("curso: " + curso + "<br/>");    
+        out.println("<div>");
+        out.println("<p><strong>Email:</strong></p>");
+        out.println("<p>" + email + "</p>");
+        out.println("</div>");
+        out.println("<div>");
+        out.println("<p><strong>Curso:</strong></p>");
+        out.println("<p>" + curso + "</p>");
+        out.println("</div>");  
+        out.println("<input type=\"submit\" name=\"Confirmar\" >");  
         out.println("</html>");
-        out.flush()
     }
 
 }
